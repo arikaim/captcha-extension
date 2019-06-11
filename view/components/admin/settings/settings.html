@@ -1,0 +1,24 @@
+{% set component = 'captcha::admin.settings.' ~ name %}
+{% set module = createModel('Modules').findByColumn(name,'name') %}
+
+<div class="ui stackable grid">
+    <div class="ui five wide computer sixteen wide tablet column segment">
+        <div class="ui block header">
+            <i class="icon file outline mini grey"></i>
+            <h4 class="content">{{ module.title }} {{ labels.title }}</h4>
+        </div>
+        <div class="ui hidden divider"></div>     
+        <div class="ui">
+            {% if module is object %}
+                {{ component(component,{ module: module }) }}
+            {% else %}
+                <div class="ui form">
+                    <div class="field">
+                        <label>{{ labels.driver }}</label>
+                        {{ component('system:admin.modules.dropdown',{ category: 'captcha' }) }}
+                    </div>
+                </div>
+            {% endif %}
+        </div>         
+    </div>
+</div>

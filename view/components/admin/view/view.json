@@ -1,0 +1,11 @@
+{
+    "buttons": {
+        "view": {
+            "title": "View sub categories"
+        }        
+    },
+    "label": {
+        "active": "Active",
+        "settings": "Settings"
+    }
+}

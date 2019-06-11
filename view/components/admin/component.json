@@ -1,0 +1,8 @@
+{
+    "access": {
+        "auth": "session",
+        "permissions": {
+            "ControlPanel": ["read","write","delete","execute"]
+        }
+    }
+}

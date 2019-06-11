@@ -1,0 +1,17 @@
+{% set config = createModel('Modules').findByColumn('recaptcha','name').config %}
+{% set site_key = config.site_key %}
+
+{% if site_key is empty %}
+    {{ component('system:message.error',{ message: 'Missing required parameter site key'}) }}
+{% else %}
+    <script>
+        var onRecaptchaLoad = function() {
+            var captchaContainer = document.querySelector('.g-recaptcha');
+            grecaptcha.render(captchaContainer, {
+                'sitekey' : '{{ site_key }}'
+            });
+        };
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" async defer></script>
+    <div class="g-recaptcha form-field"></div>
+{% endif %}

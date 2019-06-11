@@ -1,0 +1,19 @@
+{
+    "buttons": {
+        "view": {
+            "content": "Drivers",
+            "title": "Captcha drivers"
+        },                
+        "settings": {
+            "content": "Settings",
+            "title": "Settings"
+        }, 
+        "test": {
+            "content": "View",
+            "title": "View"
+        }
+    },
+    "messages": {
+       
+    }
+}

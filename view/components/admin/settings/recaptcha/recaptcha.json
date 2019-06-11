@@ -1,0 +1,19 @@
+{
+    "secret": {
+        "label": "Secret Key",               
+        "placeholder": "Secret key" 
+    },   
+    "site": {
+        "label": "Site Key",               
+        "placeholder": "Site key" 
+    },
+    "hostname": {
+        "label": "Expected Hostname",               
+        "placeholder": "Enter expected hostname" 
+    },
+    "buttons": {
+        "save": {
+            "content": "Save"
+        }      
+    }
+}
