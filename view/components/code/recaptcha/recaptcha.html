@@ -1,8 +1,8 @@
-{% set config = createModel('Modules').findByColumn('recaptcha','name').config %}
-{% set site_key = config.site_key %}
+{% set config = service('driver').getConfig('recaptcha','captcha') %}
+{% set site_key = config.getValue('site_key') %}
 
 {% if site_key is empty %}
-    {{ component('system:message.error',{ message: 'Missing required parameter site key'}) }}
+    {{ component('components:message.error',{ message: 'Missing required parameter site key'}) }}
 {% else %}
     <script>
         var onRecaptchaLoad = function() {

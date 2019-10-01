@@ -1,5 +1,5 @@
 {
-    "labels": {
-        "type": "Captcha Type"
-    } 
+    "errors": {
+        "driver": "Captcha driver not set."
+    }
 }

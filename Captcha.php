@@ -9,8 +9,7 @@
 */
 namespace Arikaim\Extensions\Captcha;
 
-use Arikaim\Core\Extension\Extension;
-use Arikaim\Core\Arikaim;
+use Arikaim\Core\Packages\Extension\Extension;
 
 /**
  * Captcha extension
@@ -23,16 +22,10 @@ class Captcha extends Extension
      * @return boolean
     */
     public function install()
-    {
-        // Api Routes
-        $result = $this->addApiRoute('GET','/api/captcha/validate','Captcha','validate');  
-        $result = $this->addApiRoute('GET','/api/captcha/[{provider}]','Captcha','show');   
-        // Control Panel
-       
-            
-        // Register events
-        $this->registerEvent('captcha.error','Trigger after captcha validation error');
-    
+    {        
+        // current captcha driver
+        $this->createOption('captcha.current','recaptcha');
+
         return true;
     }   
 }

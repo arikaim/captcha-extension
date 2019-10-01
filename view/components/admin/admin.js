@@ -12,7 +12,16 @@
 function CaptchaControlPanel() {
    
     this.init = function() {    
-        arikaim.ui.tab('.tab-item');
+        arikaim.ui.tab('.tab-item','tab_content',['category','driver_name']);
+    };
+
+    this.loadCaptcha = function(driver_name, element_id) {
+        element_id = getDefaultValue(element_id,'tab_content');
+        return arikaim.page.loadContent({
+            id: element_id,
+            component: 'captcha::code',
+            params: { driver_name: driver_name }
+        });
     };
 }
 

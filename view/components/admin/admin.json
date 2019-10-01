@@ -1,5 +1,5 @@
 {
-    "buttons": {
+    "labels": {
         "view": {
             "content": "Drivers",
             "title": "Captcha drivers"
@@ -8,7 +8,7 @@
             "content": "Settings",
             "title": "Settings"
         }, 
-        "test": {
+        "preview": {
             "content": "View",
             "title": "View"
         }

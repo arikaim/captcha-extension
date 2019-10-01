@@ -14,36 +14,26 @@ function CaptchaControlPanelView() {
     var self = this;
 
     this.init = function() {
-        arikaim.ui.button('.settings-button',function(element) {
-            var driver_name = $(element).attr('driver-name');         
+        arikaim.events.on('driver.config',function(element,name,category) {
             arikaim.ui.setActiveTab('#settings_button');
-
-            return self.loadSettings(driver_name);
-        });
-
+            return drivers.loadConfig(name,'tab_content');           
+        });       
+        
         arikaim.ui.button('.view-button',function(element) {
             var driver_name = $(element).attr('driver-name');         
             arikaim.ui.setActiveTab('#captcha_view_button');
 
-            return self.loadCapcha(driver_name);
+            return self.previewCapcha(driver_name);
         });
     };
 
-    this.loadCapcha = function(driver_name) {
+    this.previewCapcha = function(driver_name) {
         return arikaim.page.loadContent({
             id: 'tab_content',
-            component: 'captcha::code',
+            component: 'captcha::admin.preview',
             params: { driver_name: driver_name }
         });
     };
-
-    this.loadSettings = function(driver_name) {
-        return arikaim.page.loadContent({
-            id: 'tab_content',
-            component: 'captcha::admin.settings',
-            params: { name: driver_name }
-        });
-    }
 }
 
 var captchaView = new CaptchaControlPanelView();

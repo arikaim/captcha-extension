@@ -1,23 +1,6 @@
-{% set drivers = execute('Packages\\Module\\ModulesManager','getInstalled',{ status: null, type: 1, category: 'captcha' }) %}
-
-<div class="ui list margin-top-2" >
-    {% for driver in drivers %}
-    <div class="item">        
-        <div class="left floated content">
-            {% if (driver.status == 1) %}
-                <i class="icon olive check" title="{{ label.active }}"></i>
-            {% endif %}   
-            <a class="ui mini basic icon button view-button" title="{{ label.view }}" driver-name="{{ driver.name }}">
-                <i class="icon code"></i>
-            </a>  
-            <a class="ui mini basic icon button settings-button" title="{{ label.settings }}" driver-name="{{ driver.name }}">
-                <i class="icon cog"></i>
-            </a>
-        </div>
-        <div class="content">
-            <div class="header">{{ driver.title }}</div>
-            <div class="description">{{ driver.description }}</div>
-        </div>      
-    </div>
-    {% endfor %}
-</div>
+{% set drivers = service('driver').getList('captcha') %}
+{% set current = getOption('captcha.current') %}
+{% set buttons = [
+    { icon: "code", class: "view-button", title: labels.view }
+] %}
+{{ component('system:admin.drivers.list',{ category: 'captcha', current : current, buttons: buttons }) }}

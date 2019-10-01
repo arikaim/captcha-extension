@@ -1,17 +1,8 @@
-{% set driver_name = (driver_name is empty) ? 'recaptcha' : driver_name %}
-{% set component = 'captcha::code.' ~ driver_name %}
+{% set current = getOption('captcha.current') %}
+{% set driver_name = (driver_name is empty) ? current : driver_name %}
 
 {% if driver_name is not empty %}
-    {{ component(component) }}
+    {{ component('captcha::code.' ~ driver_name) }}
 {% else %}
-    <div class="ui stackable grid">
-        <div class="ui five wide computer sixteen wide tablet column segment">
-            <div class="ui form">
-                <div class="field">
-                    <label>{{ labels.type }}</label>
-                    {{ component('system:admin.modules.dropdown',{ category: 'captcha' }) }}
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="ui message">{{ errors.driver }}</div>
 {% endif %}

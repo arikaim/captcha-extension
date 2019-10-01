@@ -1,18 +1,13 @@
-<div class="ui stackable grid">
-    <div class="ui sixteen wide column">
-        <div class="ui stackable top attached tabular menu">    
-            <a id="view_button" class="item tab-item active {{ buttons.view.class }}" {{ buttons.view.title|attr("title") }} component="captcha::admin.view">
-                <i class="icon grid layout"></i>{{ buttons.view.content }}   
-            </a>  
-            <a id="settings_button" class="item tab-item {{ buttons.settings.class }}" {{ buttons.settings.title|attr("title") }} component="captcha::admin.settings">
-                <i class="icon cogs"></i>{{ buttons.settings.content }}   
-            </a> 
-            <a id="captcha_view_button" class="item tab-item {{ buttons.test.class }}" {{ buttons.test.title|attr("title") }} component="captcha::code">
-                <i class="icon code"></i>{{ buttons.test.content }}   
-            </a>                     
-        </div>
-        <div class="ui active tab basic segment" id="tab_content">
-            {{ component('captcha::admin.view') }}
-        </div>
-    </div>
-</div>
+{% set current = getOption('captcha.current') %}
+{% set params = { driver_name: current, category: 'captcha' } %}
+{% set items = [ 
+    { id: 'view_button', title: labels.view.content, component: 'captcha::admin.view', icon: 'grid layout', active: true },
+    { id: 'settings_button', title: labels.settings.content, component: 'system:admin.modules.drivers.config', icon: 'cogs', params: params },
+    { id: 'captcha_view_button', title: labels.preview.content, component: 'captcha::admin.preview', icon: 'code' }
+] %}
+
+{{  component('components:tabs',{ 
+        items: items,
+        content: { component: 'captcha::admin.view' } 
+    })
+}}
