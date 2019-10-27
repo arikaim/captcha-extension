@@ -5,7 +5,8 @@
     "type": "system",
     "description": "Captcha service.",
     "short_description": "Captcha service.",
-    "version": "1.0",
+    "version": "1.0.2",
+    "repository": "https://github.com/arikaim/captcha-extension.git",
     "position": "2",
     "admin_menu": {        
         "title": "Captcha",

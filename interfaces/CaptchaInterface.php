@@ -17,11 +17,11 @@ interface CaptchaInterface
     /**
      * Verify captcha
      *
-     * @param mixed|null $captcha_response
-     * @param mixed|null $remote_ip
+     * @param mixed|null $captchaResponse
+     * @param mixed|null $remoteIp
      * @return bool
      */
-    public function verify($captcha_response, $remote_ip);
+    public function verify($captchaResponse, $remoteIp);
 
     /**
      * Get verification errors

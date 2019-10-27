@@ -1,6 +1,6 @@
 /**
  *  Arikaim
- *  @version    1.0  
+ *  
  *  @copyright  Copyright (c) Konstantin Atanasov <info@arikaim.com>
  *  @license    http://www.arikaim.com/license.html
  *  http://www.arikaim.com
@@ -17,7 +17,7 @@ function CaptchaControlPanelView() {
         arikaim.events.on('driver.config',function(element,name,category) {
             arikaim.ui.setActiveTab('#settings_button');
             return drivers.loadConfig(name,'tab_content');           
-        });       
+        },'driverConfig');       
         
         arikaim.ui.button('.view-button',function(element) {
             var driver_name = $(element).attr('driver-name');         
