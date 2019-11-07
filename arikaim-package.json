@@ -1,19 +1,19 @@
 {
     "title": "Captcha Service",
-    "icon": "list",
+    "name": "captcha",
+    "package-type": "extension",
     "class": "Captcha",
     "type": "system",
     "description": "Captcha service.",
-    "short_description": "Captcha service.",
-    "version": "1.0.2",
+    "short-description": "Captcha service.",
+    "version": "1.0.3",
     "repository": "https://github.com/arikaim/captcha-extension.git",
     "position": "2",
-    "admin_menu": {        
+    "admin-menu": {        
         "title": "Captcha",
         "icon": "list",
-        "page_title": "Captcha",
-        "page_icon": "list",
-        "sub_title": "",
+        "page-title": "Captcha",
+        "page-icon": "list",       
         "component": "captcha::admin"
     }
 }
