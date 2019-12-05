@@ -1,4 +1,4 @@
-{% set config = service('driver').getConfig('recaptcha','captcha') %}
+{% set config = service('driver').getConfig('recaptcha') %}
 {% set site_key = config.getValue('site_key') %}
 
 {% if site_key is empty %}

@@ -11,9 +11,9 @@
     "position": "2",
     "admin-menu": {        
         "title": "Captcha",
-        "icon": "list",
+        "icon": "fingerprint",
         "page-title": "Captcha",
-        "page-icon": "list",       
+        "page-icon": "fingerprint",       
         "component": "captcha::admin"
     }
 }
