@@ -1,16 +1,12 @@
 /**
  *  Arikaim
- *  
  *  @copyright  Copyright (c) Konstantin Atanasov <info@arikaim.com>
  *  @license    http://www.arikaim.com/license
  *  http://www.arikaim.com
- * 
- *  Extension: Captcha
- *  Component: captcha::admin.view
 */
+"use strict";
 
 function CaptchaControlPanelView() {
-
     var self = this;
 
     this.init = function() {
@@ -20,18 +16,18 @@ function CaptchaControlPanelView() {
         },'driverConfig');       
         
         arikaim.ui.button('.view-button',function(element) {
-            var driver_name = $(element).attr('driver-name');         
+            var driverName = $(element).attr('driver-name');         
             arikaim.ui.setActiveTab('#captcha_view_button');
 
-            return self.previewCapcha(driver_name);
+            return self.previewCapcha(driverName);
         });
     };
 
-    this.previewCapcha = function(driver_name) {
+    this.previewCapcha = function(driverName) {
         return arikaim.page.loadContent({
             id: 'tab_content',
             component: 'captcha::admin.preview',
-            params: { driver_name: driver_name }
+            params: { driver_name: driverName }
         });
     };
 }
