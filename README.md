@@ -7,7 +7,6 @@ Arikaim CMS Captcha Service extension
 
 
 #### Requirements 
-  * PHP 7.1
   * [Arikaim CMS](https://github.com/arikaim/arikaim)
   
 
