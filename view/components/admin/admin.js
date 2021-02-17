@@ -4,7 +4,7 @@
  *  @license    http://www.arikaim.com/license
  *  http://www.arikaim.com
  */
-"use strict";
+'use strict';
 
 function CaptchaControlPanel() {
    
@@ -24,6 +24,6 @@ function CaptchaControlPanel() {
 
 var captcha = new CaptchaControlPanel();
 
-arikaim.page.onReady(function() {
+arikaim.component.onLoaded(function() {
     captcha.init();
 });
