@@ -13,5 +13,5 @@
         };
     </script>
     <script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" async defer></script>
-    <div class="g-recaptcha form-field {{ class }}" data-theme="{{ theme }}"></div>
+    <div class="g-recaptcha form-field {{ class }}" data-theme="{{ captcha_theme|default('light') }}"></div>
 {% endif %}

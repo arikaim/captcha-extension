@@ -6,7 +6,7 @@
     },
     "access": {
         "auth": "session",
-        "render": "/admin",
+        "redirect": "/admin",
         "permission": "ControlPanel:full"           
     }
 }
