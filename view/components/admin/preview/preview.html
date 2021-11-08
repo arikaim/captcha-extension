@@ -1,7 +1,7 @@
 {% set current = getOption('captcha.current') %}
 {% set driver_name = (driver_name is empty) ? current : driver_name %}
 
-{% component 'components:tabs.vertical.content' %}
+{% component 'semantic~tabs.vertical.content' %}
 <div class="ui form mt-8">
     <div class="field">
         <label>{{ labels.type }}</label>          

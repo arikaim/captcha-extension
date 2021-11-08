@@ -2,7 +2,7 @@
 {% set site_key = config.getValue('site_key') %}
 
 {% if site_key is empty %}
-    {{ component('components:message.error',{ message: 'Missing required parameter site key'}) }}
+    {{ component('semantic~message.error',{ message: 'Missing required parameter site key'}) }}
 {% else %}
     <script>
         var onRecaptchaLoad = function() {

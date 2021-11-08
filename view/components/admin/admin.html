@@ -6,7 +6,7 @@
     { id: 'captcha_view_button', title: labels.preview.content, component: 'captcha::admin.preview', icon: 'code' }
 ] %}
 
-{{  component('components:tabs',{ 
+{{  component('semantic~tabs',{ 
         items: items,
         menu: { component: 'system:admin.extensions.menu.actions', extension: 'captcha' },
         content: { component: 'captcha::admin.view' } 
