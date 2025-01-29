@@ -1,8 +1,8 @@
 {% set config = service('driver').getConfig('cloudflare') %}
 {% set site_key = config.getValue('site_key') %}
 <div
+  id="turnsite_captcha"
   class="cf-turnstile"
-  data-sitekey="{{ site_key }}"
-  data-callback="javascriptCallback">
+  data-sitekey="{{ site_key }}">
 </div>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer ></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback&render=explicit" defer ></script>
