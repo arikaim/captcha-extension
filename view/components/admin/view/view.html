@@ -3,4 +3,17 @@
 {% set buttons = [
     { icon: "code", class: "view-button", title: labels.view }
 ] %}
-{{ component('system:admin.drivers.list',{ category: 'captcha', current : current, buttons: buttons }) }}
+<div class="ui two column grid">
+    <div class="column">
+        <div class="ui segment">
+            {{  component('system:admin.drivers.list',{ 
+                    category: 'captcha', 
+                    current : current, 
+                    buttons: buttons 
+                }) 
+            }}
+        </div>
+    </div>
+    <div class="column" id="capcha_driver_config">        
+    </div>
+</div>

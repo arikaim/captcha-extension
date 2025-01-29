@@ -1,0 +1,20 @@
+{% set current = getOption('captcha.current') %}
+{% set driver_name = (driver_name is empty) ? current : driver_name %}
+<div class="ui two column grid">
+    <div class="column"> 
+        {% component 'semantic~panel' %}
+            <div class="ui form mt-2">
+                <div class="field">
+                    <label>{{ labels.default }}</label>          
+                    {{  component('system:admin.drivers.dropdown',{ 
+                            selected: driver_name, 
+                            category: 'captcha' 
+                        }) 
+                    }}
+                </div>
+            </div>
+        {% endcomponent %}
+    </div>
+    <div class="column">        
+    </div>
+</div>

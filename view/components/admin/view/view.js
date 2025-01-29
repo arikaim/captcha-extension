@@ -12,20 +12,18 @@ function CaptchaControlPanelView() {
     this.init = function() {
         arikaim.events.on('driver.config',function(element,name,category) {
             arikaim.ui.setActiveTab('#settings_button');
-            return drivers.loadConfig(name,'tab_content');           
+            return drivers.loadConfig(name,'capcha_driver_config');           
         },'driverConfig');       
         
         arikaim.ui.button('.view-button',function(element) {
             var driverName = $(element).attr('driver-name');         
-            arikaim.ui.setActiveTab('#captcha_view_button');
-
             return self.previewCapcha(driverName);
         });
     };
 
     this.previewCapcha = function(driverName) {
         return arikaim.page.loadContent({
-            id: 'tab_content',
+            id: 'capcha_driver_config',
             component: 'captcha::admin.preview',
             params: { driver_name: driverName }
         });

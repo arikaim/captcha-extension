@@ -1,8 +1,6 @@
 {
-    "title": {
-        "content": "View",
-        "icon": "code"
-    },
+    "title": "View",    
+    "icon": "code",
     "labels": {
         "type": "Captcha Driver"       
     } 

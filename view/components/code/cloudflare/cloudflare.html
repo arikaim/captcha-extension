@@ -1,0 +1,8 @@
+{% set config = service('driver').getConfig('cloudflare') %}
+{% set site_key = config.getValue('site_key') %}
+<div
+  class="cf-turnstile"
+  data-sitekey="{{ site_key }}"
+  data-callback="javascriptCallback">
+</div>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer ></script>
