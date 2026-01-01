@@ -5,7 +5,7 @@
     "type": "system",
     "description": "Captcha service.",
     "short-description": "Captcha service.",
-    "version": "1.1.5",
+    "version": "2.0.0",
     "repository": "https://github.com/arikaim/captcha-extension.git",
     "position": "2",
     "requires": {
@@ -15,9 +15,9 @@
     },
     "admin-menu": {        
         "title": "Captcha",
-        "icon": "fingerprint",
+        "svg_icon": "icons~code",
         "page-title": "Captcha",
-        "page-icon": "fingerprint",       
+        "page-icon": "icons~code",       
         "component": "captcha::admin"
     }
 }

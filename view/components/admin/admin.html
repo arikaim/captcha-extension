@@ -1,9 +1,22 @@
-{{  component('semantic~tabs',{ 
+{{  component('system:admin.tabs',{ 
         items: [ 
-            { id: 'view_button', title: labels.view.content, component: 'captcha::admin.view', icon: 'grid layout', active: true },
-            { id: 'settings_button', title: labels.settings.content, component: 'captcha::admin.settings', icon: 'cogs' }
+            {               
+                title: labels.view.content, 
+                component: 'captcha::admin.view', 
+                svg_icon: 'icons~list', 
+                active: true 
+            },
+            {               
+                title: labels.settings.content, 
+                component: 'captcha::admin.settings', 
+                svg_icon: 'icons~cog', 
+            }
         ],
-        menu: { component: 'system:admin.extensions.menu.actions', extension: 'captcha' },
-        content: { component: 'captcha::admin.view' } 
+        menu: {           
+            extension: 'captcha' 
+        },
+        content: { 
+            component: 'captcha::admin.view' 
+        } 
     })
 }}

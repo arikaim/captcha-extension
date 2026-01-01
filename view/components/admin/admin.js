@@ -7,11 +7,6 @@
 'use strict';
 
 function CaptchaControlPanel() {
-   
-    this.init = function() {    
-        arikaim.ui.tab('.tab-item','tab_content',['category','driver_name']);
-    };
-
     this.loadCaptcha = function(driverName, elementId) {
         elementId = getDefaultValue(elementId,'tab_content');
         return arikaim.page.loadContent({
@@ -23,7 +18,3 @@ function CaptchaControlPanel() {
 }
 
 var captcha = new CaptchaControlPanel();
-
-arikaim.component.onLoaded(function() {
-    captcha.init();
-});

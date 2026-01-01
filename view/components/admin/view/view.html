@@ -1,19 +1,19 @@
 {% set drivers = service('driver').getList('captcha') %}
 {% set current = getOption('captcha.current') %}
-{% set buttons = [
-    { icon: "code", class: "view-button", title: labels.view }
-] %}
-<div class="ui two column grid">
-    <div class="column">
-        <div class="ui segment">
-            {{  component('system:admin.drivers.list',{ 
-                    category: 'captcha', 
-                    current : current, 
-                    buttons: buttons 
-                }) 
-            }}
-        </div>
+
+<div class="mt-4 flex flex-row items-start">
+    <div class="w-1/2">
+        {{  component('system:admin.drivers.list',{ 
+                category: 'captcha', 
+                current : current, 
+                buttons: [
+                    { icon: "code", class: "view-button", title: labels.view }
+                ] 
+            }) 
+        }}
     </div>
-    <div class="column" id="capcha_driver_config">        
+    <div 
+        class="ml-4 w-1/2" 
+        id="capcha_driver_config">        
     </div>
 </div>

@@ -1,6 +1,6 @@
 {
     "title": "Settings",    
-    "icon": "cogs",
+    "icon": "icons~cog",
     "labels": {
         "default": "Default Captcha Driver"       
     } 
