@@ -17,7 +17,6 @@
         "title": "Captcha",
         "svg_icon": "icons~code",
         "page-title": "Captcha",
-        "page-icon": "icons~code",       
         "component": "captcha::admin"
     }
 }
