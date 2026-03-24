@@ -24,7 +24,9 @@ function CaptchaControlPanelView() {
         return arikaim.page.loadContent({
             id: 'capcha_driver_config',
             component: 'captcha::admin.preview',
-            params: { driver_name: driverName }
+            params: { 
+                driver_name: driverName 
+            }
         });
     };
 }

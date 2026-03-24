@@ -1,9 +1,8 @@
 'use strict';
 
 arikaim.component.onLoaded(function() {
-    $('#drivers_dropdown').dropdown({
-        onChange: function(name) {              
-            captcha.loadCaptcha(name,'preview_captcha');
-        }
-    });   
+    $('#drivers_dropdown').on('change', function() {
+        var name = $(this).val();
+        captcha.loadCaptcha(name,'preview_captcha');
+    }); 
 });

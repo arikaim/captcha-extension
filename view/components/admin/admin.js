@@ -1,9 +1,3 @@
-/**
- *  Arikaim
- *  @copyright  Copyright (c)  <info@arikaim.com>
- *  @license    http://www.arikaim.com/license
- *  http://www.arikaim.com
- */
 'use strict';
 
 function CaptchaControlPanel() {
@@ -12,7 +6,9 @@ function CaptchaControlPanel() {
         return arikaim.page.loadContent({
             id: elementId,
             component: 'captcha::code',
-            params: { driver_name: driverName }
+            params: { 
+                driver_name: driverName 
+            }
         });
     };
 }
